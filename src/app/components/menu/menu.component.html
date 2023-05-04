@@ -1,8 +1,0 @@
-<div class="menu" [style.display]="activeStatus">
-  <div class="close" (click)="displayMenu()">X</div>
-  <ul class="menu-list">
-    <li  *ngFor="let item of menu" value="item" (click)="goToLink(item)"><a>{{ item }}</a></li>
-  </ul>
-</div>
-
-
