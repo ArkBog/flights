@@ -1,0 +1,12 @@
+[
+    {
+    "name": "Cracow", 
+    "odloty": ["Warsaw", "Gdansk", "Roma", "Mediolan", "Bangkok"], 
+    "arrivals": ["Warsaw", "Gdansk", "Roma", "Mediolan", "Bangkok"] 
+    },
+    {
+    "name": "Warsaw", 
+    "odloty": ["Cracow", "Gdansk", "Madrid", "Barcelona", "New York"], 
+    "arrivals": ["Cracow", "Gdansk", "Madrid", "Barcelona", "New York"] 
+    }
+]

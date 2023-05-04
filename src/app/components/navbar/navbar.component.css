@@ -1,0 +1,37 @@
+nav {
+  height: 10vh;
+  width: 100%;
+  background-color: var(--third-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  letter-spacing: .2rem;
+}
+
+nav .menu-text {
+  transition: var(--links-transition);
+}
+
+nav .menu-text:hover {
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+nav .menu-logo .logo {
+  width: 100px;
+}
+
+nav .menu-icon {
+  margin: 0 1rem 0 0;
+}
+
+nav .menu-icon .icon {
+  width: 20px;
+}
+
+nav .menu-icon .icon:hover {
+  cursor: pointer;
+  filter: invert(84%) sepia(33%) saturate(4719%) hue-rotate(195deg) brightness(106%) contrast(101%);
+}
