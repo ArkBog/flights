@@ -16,6 +16,7 @@ import { SaleComponent } from './components/sale/sale.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FlightsSearchComponent } from './components/flights-search/flights-search.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { FlightsSearchComponent } from './components/flights-search/flights-sear
     LayoutModule,
     ReactiveFormsModule
   ],
-  providers: [IsActiveService],
+  providers: [IsActiveService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

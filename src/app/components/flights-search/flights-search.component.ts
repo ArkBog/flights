@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import * as data from '../../database/airports.json';
+import { formatDate } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 
 const airports = (<any>data);
@@ -11,25 +13,42 @@ const airports = (<any>data);
   templateUrl: './flights-search.component.html',
   styleUrls: ['./flights-search.component.scss']
 })
+
+
+
 export class FlightsSearchComponent implements OnInit {
 
 
   allAirports: any = airports.default;
-  departures:any;
+  departures:string = "Origin";
+  destination:string = "Destination"
+  today:Date = new Date();
+  latestDate:any;
+
+  constructor(public datepipe:DatePipe){}
+  
 
   ngOnInit(): void {
     console.log(this.allAirports[1].odloty);
+    this.latestDate =this.datepipe.transform(this.today, 'yyyy-MM-dd');
+    console.log(this.latestDate)
   }
   
 
   flightsSearcher = new FormGroup({
-    departures: new FormControl("Are you fly from?"),
+    departures: new FormControl(this.departures),
+    destination: new FormControl(this.destination)
   })
 
   chooseStart(value:any){
     console.log(value);
     this.departures = this.allAirports[value].odloty;
     console.log(this.departures)
+  }
+
+  chooseDestination(value:any){
+    console.log(value);
+    this.destination = value;
   }
   
 
