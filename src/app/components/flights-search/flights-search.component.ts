@@ -29,16 +29,11 @@ export class FlightsSearchComponent implements OnInit {
   
 
   ngOnInit(): void {
-    console.log(this.allAirports[1].odloty);
     this.latestDate =this.datepipe.transform(this.today, 'yyyy-MM-dd');
-    console.log(this.latestDate)
   }
   
 
-  flightsSearcher = new FormGroup({
-    departures: new FormControl(this.departures),
-    destination: new FormControl(this.destination)
-  })
+  
 
   chooseStart(value:any){
     console.log(value);
@@ -51,6 +46,12 @@ export class FlightsSearchComponent implements OnInit {
     this.destination = value;
   }
   
+  flightsSearcher = new FormGroup({
+    departures: new FormControl(this.departures),
+    destination: new FormControl(this.destination),
+    startDate: new FormControl(),
+    comebackDate: new FormControl(),
+  })
 
   
 }

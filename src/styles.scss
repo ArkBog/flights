@@ -13,3 +13,15 @@
   body{
     font-family: "Lato", sans-serif;
   }
+  .button-full{
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+    color: var(--third-color);
+    transition: var(--links-transition);
+    &:hover{
+      color: var(--primary-color);
+      background-color: var(--third-color);
+      cursor: pointer;
+
+  }
+}
