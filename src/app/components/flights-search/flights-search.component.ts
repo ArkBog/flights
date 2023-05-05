@@ -18,40 +18,37 @@ const airports = (<any>data);
 
 export class FlightsSearchComponent implements OnInit {
 
+  airports: any = airports.default;
+  zmienna:any;
 
-  allAirports: any = airports.default;
-  departures:string = "Origin";
-  destination:string = "Destination"
+  departures:any;
+
   today:Date = new Date();
   latestDate:any;
+  minReturnDate:any;
 
   constructor(public datepipe:DatePipe){}
+
+  flights = new FormGroup({
+    flyFrom: new FormControl("Origin"),
+    flyTo: new FormControl("Destination"),
+    departureDate: new FormControl(),
+    returnDate: new FormControl(),
+  })
   
 
   ngOnInit(): void {
     this.latestDate =this.datepipe.transform(this.today, 'yyyy-MM-dd');
+    console.log(this.latestDate);
   }
   
-
-  
-
-  chooseStart(value:any){
-    console.log(value);
-    this.departures = this.allAirports[value].odloty;
-    console.log(this.departures)
+  startTravel(value:any){
+    this.zmienna = value;
+    this.departures = airports.default[this.zmienna].departures;
   }
 
-  chooseDestination(value:any){
-    console.log(value);
-    this.destination = value;
+  changeDate(value:any){
+    this.minReturnDate = value;
   }
-  
-  flightsSearcher = new FormGroup({
-    departures: new FormControl(this.departures),
-    destination: new FormControl(this.destination),
-    startDate: new FormControl(),
-    comebackDate: new FormControl(),
-  })
-
   
 }

@@ -1,16 +1,18 @@
-<form [formGroup]="flightsSearcher" class="flights-searcher">
-    <select name="departures" id="departures" formControlName="departures" #airport (change)="chooseStart(airport.value)" class="flights-searcher-option">
-        <option disabled selected hidden>Origin</option>
-        <option  *ngFor="let item of allAirports; let i = index" [value]="i" >{{allAirports[i].name}}</option>
-    </select>
-    <select name="destination" id="destination" formControlName="destination" #destination (change)="chooseDestination(destination.value)" class="flights-searcher-option">
-        <option  disabled selected hidden>Destination</option>
-        <option  *ngFor="let item of departures" [value]="item">{{item}}</option>
-    </select>
-    <input type="date" [min]="latestDate" formControlName="startDate" class="flights-searcher-option">
-    <input type="date" [min]="latestDate" formControlName="comebackDate" class="flights-searcher-option">
-    <input type="number" placeholder="Number of passangers" formControlName="passangersNumber" class="flights-searcher-option">
-    <button class="button-full">Add to cart</button>
-</form>
+<form [formGroup]="flights" class="flights-searcher">
 
+    <select name="flyFrom" id="flyFrom" #flyFrom formControlName="flyFrom" (change)="startTravel(flyFrom.value)" class="flights-searcher-option">
+        <option disabled>Origin</option>
+        <option *ngFor="let item of airports; let i = index" [value]="i">{{item.from}}</option>
+    </select>
+
+    <select name="flyTo" id="flyTo" #flyTo formControlName="flyTo" class="flights-searcher-option">
+        <option disabled>Destination</option>
+        <option *ngFor="let item of departures" [value]="item.id">{{item.name}}</option>
+    </select>
+
+    <input type="text" onfocus="type='date'" onblur="type='text'" placeholder="Departure" [min]="latestDate" class="flights-searcher-option" #departureDate name="departureDate" formControlName="departureDate" (change)="changeDate(departureDate.value)">
+
+    <input type="text" onfocus="type='date'" onblur="type='text'" placeholder="Return" [min]="minReturnDate" class="flights-searcher-option" #returnDate name="returnDate" formControlName="returnDate">
+</form>
+{{flights.value | json}}
 

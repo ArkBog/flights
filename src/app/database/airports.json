@@ -1,12 +1,12 @@
 [
     {
-    "name": "Cracow", 
-    "odloty": ["Warsaw", "Gdansk", "Roma", "Mediolan", "Bangkok"], 
-    "arrivals": ["Warsaw", "Gdansk", "Roma", "Mediolan", "Bangkok"] 
+    "from": "Cracow",
+    "id": 0, 
+    "departures": [{"id": 1, "name": "Roma", "country": "Italia", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00"},{"id": 2,"name": "Milan", "country": "Italia", "price": 200, "startTime": "08:00:00+01:00", "landingTime": "11:00:00+01:00"}]
     },
     {
-    "name": "Warsaw", 
-    "odloty": ["Cracow", "Gdansk", "Madrid", "Barcelona", "New York"], 
-    "arrivals": ["Cracow", "Gdansk", "Madrid", "Barcelona", "New York"] 
+    "from": "Roma",
+    "id": 1, 
+    "departures": [{"id": 0, "name": "Cracow", "country": "Poland", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00"}]
     }
 ]

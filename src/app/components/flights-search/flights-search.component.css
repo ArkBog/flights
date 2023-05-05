@@ -32,7 +32,6 @@
 
 .flights-searcher .flights-searcher-option::placeholder {
   color: var(--primary-color);
-  font-size: .5rem;
 }
 
 .flights-searcher .button-full {
