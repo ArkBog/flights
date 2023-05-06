@@ -13,6 +13,10 @@
     <input type="text" onfocus="type='date'" onblur="type='text'" placeholder="Departure" [min]="latestDate" class="flights-searcher-option" #departureDate name="departureDate" formControlName="departureDate" (change)="changeDate(departureDate.value)">
 
     <input type="text" onfocus="type='date'" onblur="type='text'" placeholder="Return" [min]="minReturnDate" class="flights-searcher-option" #returnDate name="returnDate" formControlName="returnDate">
+
+    <input type="number" placeholder="Number of passangers" name="numberOfPassangers" #numberOfPassangers min="1" formControlName="numberOfPassangers" class="flights-searcher-option">
+
+    <button class="button-full" routerLink="/flight-details">Book now</button>
 </form>
 {{flights.value | json}}
 

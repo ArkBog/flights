@@ -17,6 +17,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FlightsSearchComponent } from './components/flights-search/flights-search.component';
 import { DatePipe } from '@angular/common';
+import { FlightDetailsComponent } from './components/flight-details/flight-details.component';
+import { UserIsLoggedService } from './services/user-is-logged.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DatePipe } from '@angular/common';
     SaleComponent,
     AboutUsComponent,
     ContactComponent,
-    FlightsSearchComponent
+    FlightsSearchComponent,
+    FlightDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,7 @@ import { DatePipe } from '@angular/common';
     LayoutModule,
     ReactiveFormsModule
   ],
-  providers: [IsActiveService, DatePipe],
+  providers: [IsActiveService, DatePipe, UserIsLoggedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import * as data from '../../database/airports.json';
 import { formatDate } from '@angular/common';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 const airports = (<any>data);
@@ -27,13 +28,14 @@ export class FlightsSearchComponent implements OnInit {
   latestDate:any;
   minReturnDate:any;
 
-  constructor(public datepipe:DatePipe){}
+  constructor(public datepipe:DatePipe, private readonly router: Router){}
 
   flights = new FormGroup({
     flyFrom: new FormControl("Origin"),
     flyTo: new FormControl("Destination"),
     departureDate: new FormControl(),
     returnDate: new FormControl(),
+    numberOfPassangers: new FormControl(),
   })
   
 
