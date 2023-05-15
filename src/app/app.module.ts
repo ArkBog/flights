@@ -19,6 +19,8 @@ import { FlightsSearchComponent } from './components/flights-search/flights-sear
 import { DatePipe } from '@angular/common';
 import { FlightDetailsComponent } from './components/flight-details/flight-details.component';
 import { UserIsLoggedService } from './services/user-is-logged.service';
+import { FlightFormService } from './services/flight-form.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -40,9 +42,10 @@ import { UserIsLoggedService } from './services/user-is-logged.service';
     AppRoutingModule,
     FormsModule,
     LayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [IsActiveService, DatePipe, UserIsLoggedService],
+  providers: [IsActiveService, DatePipe, UserIsLoggedService, FlightFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

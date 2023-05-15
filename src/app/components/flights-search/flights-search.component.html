@@ -1,4 +1,4 @@
-<form [formGroup]="flights" class="flights-searcher">
+<form [formGroup]="flights" (ngSubmit)="onSubmit()" class="flights-searcher">
 
     <select name="flyFrom" id="flyFrom" #flyFrom formControlName="flyFrom" (change)="startTravel(flyFrom.value)" class="flights-searcher-option">
         <option disabled>Origin</option>
@@ -16,7 +16,7 @@
 
     <input type="number" placeholder="Number of passangers" name="numberOfPassangers" #numberOfPassangers min="1" formControlName="numberOfPassangers" class="flights-searcher-option">
 
-    <button class="button-full" routerLink="/flight-details">Book now</button>
+    <button type="submit" class="button-full" >Book now</button>
 </form>
 {{flights.value | json}}
 

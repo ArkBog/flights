@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "form": [
+    {
+      "flyFrom": "Origin",
+      "flyTo": "Destination",
+      "departureDate": null,
+      "returnDate": null,
+      "numberOfPassangers": null,
+      "id": 1
+    },
+    {
+      "flyFrom": "0",
+      "flyTo": "1",
+      "departureDate": "2023-05-20",
+      "returnDate": "2023-05-28",
+      "numberOfPassangers": 4,
+      "id": 2
+    },
+    {
+      "flyFrom": "Origin",
+      "flyTo": "Destination",
+      "departureDate": null,
+      "returnDate": null,
+      "numberOfPassangers": null,
+      "id": 3
+    }
+  ]
+}
