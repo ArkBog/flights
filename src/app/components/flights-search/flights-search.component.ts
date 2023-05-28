@@ -40,7 +40,7 @@ export class FlightsSearchComponent implements OnInit {
   
 
   flights = new FormGroup({
-    flyFrom: new FormControl<string>("Origin"),
+    flyFrom: new FormControl("Origin"),
     flyTo: new FormControl("Destination"),
     departureDate: new FormControl(),
     returnDate: new FormControl(),
@@ -76,6 +76,7 @@ export class FlightsSearchComponent implements OnInit {
     console.log(typeof this.flights.value)
     this.flyFromToLocal = JSON.stringify(this.flights.value)
     localStorage.setItem("flyFrom", this.flyFromToLocal);
+    this.router.navigate(["flight-details"]);
   }
 
   }

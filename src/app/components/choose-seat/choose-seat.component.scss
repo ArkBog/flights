@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    .background{
+        height: 100%;
+        z-index: -1;
+    }
+    .buttons-container{
+        position: absolute;
+        top: 41%;
+        left: 0;
+    }
+}

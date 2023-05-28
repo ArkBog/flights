@@ -1,2 +1,24 @@
-<div *ngIf="userIsLoggedStatus">Użytkownik zalogowany</div>
-<div *ngIf="userIsLoggedStatus==false">Użytkownik niezalogowany</div>
+<!-- <div *ngIf="userIsLoggedStatus">Użytkownik zalogowany</div>
+<div *ngIf="userIsLoggedStatus==false">Użytkownik niezalogowany</div> -->
+<app-choose-seat></app-choose-seat>
+<div class="ticket">
+    <h1>{{startFlyHeader}} - {{endFlyHeader}}</h1>
+    <h3>Departure: {{departureDate}} |   Return:{{returnDate}} </h3>
+    <form>
+        <input type="text" name="name" id="name" placeholder="name" class="flights-searcher-option" formControlName="name">
+        <input type="text" name="surname" id="surname" placeholder="surname" class="flights-searcher-option" formControlName="surname">
+        <input onfocus="type='date'" onblur="type='text'" placeholder="date of birth" class="flights-searcher-option" formControlName="dateOfBirth">
+        <div class="additional-luggage">
+            <div class="additional-luggage-input">
+                <img src="../../../assets/img/suitcase-rolling-solid.svg" alt="additional-luggage" class="additional-luggage-background">
+                <input type="checkbox" name="additionalLuggage" id="additionalLuggage" formControlName="additionalLuggage" >
+             </div>
+             <p class="label">Additional luggage</p>
+        </div>
+        <div>
+            <button class="button-full" value="1" formConrolName="seat">Choose your seat</button>
+        </div>
+        <button type="submit" class="button-full">Submit</button>
+    </form>
+    <div class="test"></div>
+</div>

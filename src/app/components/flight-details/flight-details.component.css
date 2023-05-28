@@ -1,0 +1,90 @@
+.ticket {
+  width: 70%;
+  margin: 5rem auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 2px 34px -17px #9381ff;
+  -moz-box-shadow: 0px 2px 34px -17px #9381ff;
+  box-shadow: 0px 2px 34px -17px #9381ff;
+  color: var(--primary-color);
+}
+
+.ticket h1 {
+  text-align: center;
+}
+
+.ticket h3 {
+  text-align: center;
+}
+
+.ticket form {
+  margin: 0.5rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.ticket form .flights-searcher-option {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+  -webkit-box-shadow: -9px 10px 15px -14px #9381ff;
+  -moz-box-shadow: -9px 10px 15px -14px #9381ff;
+  box-shadow: -9px 10px 15px -14px #9381ff;
+}
+
+.ticket form .button-full {
+  margin: 0.5rem;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  border: none;
+  letter-spacing: 0.1rem;
+}
+
+.ticket .additional-luggage {
+  width: 100px;
+}
+
+.ticket .additional-luggage:hover {
+  cursor: pointer;
+}
+
+.ticket .additional-luggage .label {
+  width: 100%;
+  text-align: center;
+  font-size: .7rem;
+}
+
+.ticket .additional-luggage .additional-luggage-input {
+  width: 100px;
+  position: relative;
+  height: 100px;
+}
+
+.ticket .additional-luggage .additional-luggage-input .additional-luggage-background {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ticket .additional-luggage .additional-luggage-input input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: block;
+}
+
+.ticket .additional-luggage .additional-luggage-input input[type="checkbox"]:checked {
+  opacity: 0.5;
+}
+
+.ticket .additional-luggage .additional-luggage-input input[type="checkbox"]:hover {
+  cursor: pointer;
+}

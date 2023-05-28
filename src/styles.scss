@@ -12,6 +12,7 @@
   }
   body{
     font-family: "Lato", sans-serif;
+    background-color: var(--third-color);
   }
   .button-full{
     background-color: var(--primary-color);
@@ -23,5 +24,27 @@
       background-color: var(--third-color);
       cursor: pointer;
 
+  }
+}
+.flights-searcher-option{
+  width: 60%;
+  height: 2rem;
+  margin: .5rem;
+  border-radius: .2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  border: var(--third-color) 2px solid;
+  outline: none;
+  &:focus{
+      border: var(--primary-color) 2px solid;
+  }
+  &:active{
+      border: var(--primary-color) 2px solid;
+  }
+  &::placeholder{
+      color: var(--primary-color);
+      // font-size: .5rem;
   }
 }

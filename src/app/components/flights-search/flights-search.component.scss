@@ -7,27 +7,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    .flights-searcher-option{
-        width: 60%;
-        height: 2rem;
-        margin: .5rem;
-        border-radius: .2rem;
-        text-transform: uppercase;
-        letter-spacing: .1rem;
-        background-color: var(--third-color);
-        color: var(--primary-color);
-        border: var(--third-color) 2px solid;
-        outline: none;
-        &:focus{
-            border: var(--primary-color) 2px solid;
-        }
-        &:active{
-            border: var(--primary-color) 2px solid;
-        }
-        &::placeholder{
-            color: var(--primary-color);
-            // font-size: .5rem;
-        }
+    // .flights-searcher-option{
+    //     width: 60%;
+    //     height: 2rem;
+    //     margin: .5rem;
+    //     border-radius: .2rem;
+    //     text-transform: uppercase;
+    //     letter-spacing: .1rem;
+    //     background-color: var(--third-color);
+    //     color: var(--primary-color);
+    //     border: var(--third-color) 2px solid;
+    //     outline: none;
+    //     &:focus{
+    //         border: var(--primary-color) 2px solid;
+    //     }
+    //     &:active{
+    //         border: var(--primary-color) 2px solid;
+    //     }
+    //     &::placeholder{
+    //         color: var(--primary-color);
+    //         // font-size: .5rem;
+    //     }
 
         
     }
@@ -38,6 +38,5 @@
         padding: .3rem;
         border: none;
         letter-spacing: .1rem;
-    }
 
 }

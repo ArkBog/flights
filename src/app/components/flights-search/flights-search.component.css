@@ -9,32 +9,7 @@
   align-items: center;
 }
 
-.flights-searcher .flights-searcher-option {
-  width: 60%;
-  height: 2rem;
-  margin: .5rem;
-  border-radius: .2rem;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  background-color: var(--third-color);
-  color: var(--primary-color);
-  border: var(--third-color) 2px solid;
-  outline: none;
-}
-
-.flights-searcher .flights-searcher-option:focus {
-  border: var(--primary-color) 2px solid;
-}
-
-.flights-searcher .flights-searcher-option:active {
-  border: var(--primary-color) 2px solid;
-}
-
-.flights-searcher .flights-searcher-option::placeholder {
-  color: var(--primary-color);
-}
-
-.flights-searcher .button-full {
+.button-full {
   margin: .5rem;
   width: 60%;
   border-radius: .2rem;

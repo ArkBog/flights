@@ -20,7 +20,9 @@ import { DatePipe } from '@angular/common';
 import { FlightDetailsComponent } from './components/flight-details/flight-details.component';
 import { UserIsLoggedService } from './services/user-is-logged.service';
 import { FlightFormService } from './services/flight-form.service';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ChooseSeatComponent } from './components/choose-seat/choose-seat.component'
+import { SeatsService } from './services/seats.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http'
     AboutUsComponent,
     ContactComponent,
     FlightsSearchComponent,
-    FlightDetailsComponent
+    FlightDetailsComponent,
+    ChooseSeatComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ import { HttpClientModule } from '@angular/common/http'
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [IsActiveService, DatePipe, UserIsLoggedService, FlightFormService],
+  providers: [IsActiveService, DatePipe, UserIsLoggedService, FlightFormService, SeatsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
