@@ -10,7 +10,7 @@ import { SaleComponent } from './components/sale/sale.component';
 import { FlightDetailsComponent } from './components/flight-details/flight-details.component';
 
 
-const routes: Routes = [{path:"", component: HomeComponent}, {path:"profile", component: ProfileComponent}, {path: "cart", component: CartComponent}, {path: "flights2", component: FlightsComponent}, {path: "contact", component: ContactComponent}, {path: "aboutus", component: AboutUsComponent}, {path:"sale", component: SaleComponent}, {path:"flight-details", component: FlightDetailsComponent}];
+const routes: Routes = [{path:"", component: HomeComponent}, {path:"profile", component: ProfileComponent}, {path: "cart", component: CartComponent}, {path: "flights", component: FlightsComponent}, {path: "contact", component: ContactComponent}, {path: "aboutus", component: AboutUsComponent}, {path:"sale", component: SaleComponent}, {path:"flight-details", component: FlightDetailsComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
