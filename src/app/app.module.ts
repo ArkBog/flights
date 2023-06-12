@@ -24,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChooseSeatComponent } from './components/choose-seat/choose-seat.component'
 import { SeatsService } from './services/seats.service';
 import { BasketService } from './services/basket.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { BasketService } from './services/basket.service';
     ContactComponent,
     FlightsSearchComponent,
     FlightDetailsComponent,
-    ChooseSeatComponent
+    ChooseSeatComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,7 @@ import { BasketService } from './services/basket.service';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [IsActiveService, DatePipe, UserIsLoggedService, FlightFormService, SeatsService, BasketService],
+  providers: [IsActiveService, DatePipe, UserIsLoggedService, FlightFormService, SeatsService, BasketService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

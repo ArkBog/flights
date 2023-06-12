@@ -10,11 +10,36 @@ import { Ticket } from 'src/app/interfaces/interfaces';
 export class CartComponent implements OnInit {
 
   basket:Ticket[] = [];
+
+  totalCost:any[] = [];
+  sum:any;
   
   constructor(private basketService: BasketService){}
 
   ngOnInit(): void {
+    this.totalCost.length = 0;
+    console.log(this.totalCost);
     this.basket = this.basketService.basketFromService;
-    console.log(this.basket)
+
+    
+    for (let i = 0; i < this.basket.length; i++){
+      if(this.basket[i].additionalLuggage === true){
+        this.basket[i].price = this.basket[i].price + 50
+      };
+      if(this.basket[i].twoWayTravel === true){
+        this.basket[i].price = this.basket[i].price * 2
+      }
+      this.totalCost.push(this.basket[i].price)
+    }
+
+    console.log(this.totalCost);
+  }
+
+  addArrayElements(): any {
+    let sum = 0;
+    for (let i = 0; i < this.totalCost.length; i++) {
+      sum += this.totalCost[i];
+    }
+    return sum;
   }
 }

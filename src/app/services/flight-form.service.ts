@@ -11,12 +11,4 @@ export class FlightFormService {
 
   constructor(private http:HttpClient){}
 
-  // addForm(body:any){
-
-	// 	return this.http.post('http://localhost:3000/form',body)
-	// }
-  // getUsers(){
-
-  //   return this.http.get(`http://localhost:3000/form`)
-  // }
 }

@@ -1,2 +1,20 @@
-<p>cart works!</p>
-{{basket | json}}
+<div class="basket-table">
+  <ng-container *ngIf="basket.length === 0"
+    >Basket is empty. Add something.</ng-container
+  >
+  <ng-container *ngIf="basket.length > 0"
+    >
+  <h1>Your tickets</h1>
+  <div class="basket-item" *ngFor="let item of basket">
+    {{ item.name }}
+    {{ item.surname }}
+    {{ item.seat }}
+    {{ item.price }}
+  </div>
+  <h1>Total cost: {{ addArrayElements() }}</h1>
+  <button class="button-full" [routerLink]="['/payment']">
+    Confirm & Pay now
+  </button>
+  </ng-container
+  >
+</div>

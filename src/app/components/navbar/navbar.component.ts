@@ -16,10 +16,10 @@ export class NavbarComponent implements OnInit {
 
 
   menu:string[] = ["Flights", "Sale", "About us", "Contact"];
-  logo:string = "/assets/img/logo.svg" ;
-  cart:string = "../../../assets/img/cart-shopping-solid.svg" ;
-  account:string = "../../../assets/img/user-solid.svg" ;
-  menuHamburger:string = "../../../assets/img/bars-solid.svg" ;
+  logo:string = "./assets/img/logo.svg" ;
+  cart:string = "./assets/img/cart-shopping-solid.svg" ;
+  account:string = "./assets/img/user-solid.svg" ;
+  menuHamburger:string = "./assets/img/bars-solid.svg" ;
 
   constructor(private activeService: IsActiveService, public breakpointObserver: BreakpointObserver, private readonly router:Router){}
 

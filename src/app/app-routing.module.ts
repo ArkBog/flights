@@ -8,9 +8,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SaleComponent } from './components/sale/sale.component';
 import { FlightDetailsComponent } from './components/flight-details/flight-details.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { AuthGuard } from './auth.guard';
 
 
-const routes: Routes = [{path:"", component: HomeComponent}, {path:"profile", component: ProfileComponent}, {path: "cart", component: CartComponent}, {path: "flights", component: FlightsComponent}, {path: "contact", component: ContactComponent}, {path: "aboutus", component: AboutUsComponent}, {path:"sale", component: SaleComponent}, {path:"flight-details", component: FlightDetailsComponent}];
+const routes: Routes = [{path:"", component: HomeComponent}, {path:"profile", component: ProfileComponent}, {path: "cart", component: CartComponent}, {path: "flights", component: FlightsComponent}, {path: "contact", component: ContactComponent}, {path: "aboutus", component: AboutUsComponent}, {path:"sale", component: SaleComponent}, {path:"flight-details", component: FlightDetailsComponent}, {path:"payment", component: PaymentComponent, canActivate: [AuthGuard]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

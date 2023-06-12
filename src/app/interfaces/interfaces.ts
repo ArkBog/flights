@@ -5,5 +5,6 @@ export interface Ticket {
     additionalLuggage: boolean;
     seat: string;
     price: number;
+    twoWayTravel:boolean;
 
 }

@@ -47,6 +47,10 @@ export class FlightDetailsComponent implements OnInit {
 
   yourSeat!:string
 
+  price!:number;
+
+  twoWayTravel!:boolean;
+
   bookedTicket:any;
   basket:Ticket[] = [];
 
@@ -58,15 +62,10 @@ export class FlightDetailsComponent implements OnInit {
     seat: new FormControl(),
   })
 
-
-
   ngOnInit(): void {
       this.userIsLoggedInfo.userIsLogged.subscribe(userIsLoggedStatus => this.userIsLoggedStatus = userIsLoggedStatus);
       console.log(this.userIsLoggedStatus);
-    //   this.flightFormService.getUsers().subscribe( (data:any) => {
-    //     console.log(data);
-    //   });
-    // }
+
     this.storageForm = localStorage.getItem("flyFrom");
     console.log(this.storageForm);
     this.flightsForm = JSON.parse(this.storageForm);
@@ -81,12 +80,15 @@ export class FlightDetailsComponent implements OnInit {
     this.convertFlyToToNumber = Number(this.flightsForm.flyTo);
     this.endFly = this.startFly.departures[this.convertFlyToToNumber];
     this.endFlyHeader = this.endFly.name;
+    
 
     this.departureDate = `${this.flightsForm.departureDate} ${this.endFly.startTime}`;
     this.returnDate = `${this.flightsForm.returnDate} ${this.airports[this.convertFlyToToNumber].departures[this.convertFlyFromToNumber].startTime}`;
     console.log(this.returnDate);
     this.seats = this.startFly.departures[this.convertFlyToToNumber].seats;
     this.seatsService.seats = this.seats;
+
+    this.price = this.airports[this.convertFlyToToNumber].departures[this.convertFlyFromToNumber].price;
 
     this.numberOfPassangersFromLocal = this.flightsForm.numberOfPassangers;
     console.log(this.numberOfPassangersFromLocal);
@@ -97,11 +99,7 @@ export class FlightDetailsComponent implements OnInit {
 
     this.seatsService.currentStatus.subscribe(status => this.status = status);
 
-
-  
   }
-
-
 
   reciveData($event: any){
     this.yourSeat = $event;
@@ -111,15 +109,24 @@ export class FlightDetailsComponent implements OnInit {
   displayComponentChooseSeat(){
     this.seatsService.changeStatus("block")
   }
+
   
   onSubmitTicket(){
     console.log(this.ticket.value);
+    if(this.flightsForm.returnDate === null){
+      this.twoWayTravel = false
+    }
+    else(
+      this.twoWayTravel = true
+    )
     this.bookedTicket = {
       name: this.ticket.value.name,
       surname: this.ticket.value.surname,
       dateOfBirth: this.ticket.value.dateOfBirth,
       additionalLuggage: this.ticket.value.additionalLuggage,
       seat: this.yourSeat,
+      price: this.price,
+      twoWayTravel: this.twoWayTravel,
     };
     this.basket.push(this.bookedTicket);
     console.log(this.basket);

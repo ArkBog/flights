@@ -1,0 +1,24 @@
+{
+    "users": [
+      {
+        "id":"001",
+        "login": "aa",
+        "password": "bb"
+      },
+      {
+        "id":"002",
+        "login": "cc",
+        "password": "dd"
+      },
+      {
+        "id":"003",
+        "login": "admin",
+        "password": "admin123"
+      },
+      {
+        "id":"004",
+        "login":"Raoul",
+        "password": "test"
+      }
+    ]
+  }

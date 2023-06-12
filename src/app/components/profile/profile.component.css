@@ -1,0 +1,27 @@
+.profile-background {
+  background-color: var(--secondary-color);
+  width: 60%;
+  margin: 5rem auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.profile-background .button-full {
+  margin: auto;
+  display: block;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  border: none;
+  letter-spacing: 0.1rem;
+}
+
+.profile-background .flights-searcher-option {
+  text-transform: none;
+}
+
+.profile-background .user-logged {
+  color: var(--third-color);
+  font-size: 2rem;
+  text-transform: uppercase;
+}

@@ -1,22 +1,83 @@
 <form [formGroup]="flights" (ngSubmit)="onSubmit()" class="flights-searcher">
+  <select
+    name="flyFrom"
+    id="flyFrom"
+    #flyFrom
+    formControlName="flyFrom"
+    (change)="startTravel(flyFrom.value)"
+    class="flights-searcher-option"
+    required
+  >
+    <option disabled>Origin</option>
+    <option *ngFor="let item of airports; let i = index" [value]="i">
+      {{ item.from }}
+    </option>
+  </select>
+  <div *ngIf="validationForSelect===false">Choose value</div>
+  <div *ngIf="getControl('flyFrom')?.invalid && getControl('flyFrom')?.touched">
+    {{ getErrorMessage('flyFrom') }}
+  </div>
 
-    <select name="flyFrom" id="flyFrom" #flyFrom formControlName="flyFrom" (change)="startTravel(flyFrom.value)" class="flights-searcher-option">
-        <option disabled>Origin</option>
-        <option *ngFor="let item of airports; let i = index" [value]="i">{{item.from}}</option>
-    </select>
+  <select
+    name="flyTo"
+    id="flyTo"
+    #flyTo
+    formControlName="flyTo"
+    class="flights-searcher-option"
+    required
+  >
+    <option disabled>Destination</option>
+    <option *ngFor="let item of departures" [value]="item.id">
+      {{ item.name }}
+    </option>
+  </select>
+  <div *ngIf="validationForSelect===false">Choose value</div>
+  <div *ngIf="getControl('flyTo')?.invalid && getControl('flyTo')?.touched">
+    {{ getErrorMessage('flyTo') }}
+  </div>
 
-    <select name="flyTo" id="flyTo" #flyTo formControlName="flyTo" class="flights-searcher-option">
-        <option disabled>Destination</option>
-        <option *ngFor="let item of departures" [value]="item.id">{{item.name}}</option>
-    </select>
+  <input
+    type="text"
+    onfocus="type='date'"
+    onblur="type='text'"
+    placeholder="Departure"
+    [min]="latestDate"
+    class="flights-searcher-option"
+    #departureDate
+    name="departureDate"
+    formControlName="departureDate"
+    (change)="changeDate(departureDate.value)"
+    required
+  />
+  <div *ngIf="getControl('departureDate')?.invalid && getControl('departureDate')?.touched">
+    {{ getErrorMessage('departureDate') }}
+  </div>
 
-    <input type="text" onfocus="type='date'" onblur="type='text'" placeholder="Departure" [min]="latestDate" class="flights-searcher-option" #departureDate name="departureDate" formControlName="departureDate" (change)="changeDate(departureDate.value)">
+  <input
+    type="text"
+    onfocus="type='date'"
+    onblur="type='text'"
+    placeholder="Return"
+    [min]="minReturnDate"
+    class="flights-searcher-option"
+    #returnDate
+    name="returnDate"
+    formControlName="returnDate"
+  />
 
-    <input type="text" onfocus="type='date'" onblur="type='text'" placeholder="Return" [min]="minReturnDate" class="flights-searcher-option" #returnDate name="returnDate" formControlName="returnDate">
+  <input
+    type="number"
+    placeholder="Number of passangers"
+    name="numberOfPassangers"
+    #numberOfPassangers
+    min="1"
+    formControlName="numberOfPassangers"
+    class="flights-searcher-option"
+    required
+  />
+  <div *ngIf="getControl('numberOfPassangers')?.invalid && getControl('numberOfPassangers')?.touched">
+    {{ getErrorMessage('numberOfPassangers') }}
+  </div>
 
-    <input type="number" placeholder="Number of passangers" name="numberOfPassangers" #numberOfPassangers min="1" formControlName="numberOfPassangers" class="flights-searcher-option">
-
-    <button type="submit" class="button-full" >Book now</button>
+  <button type="submit" class="button-full">Book now</button>
 </form>
-{{flights.value | json}}
-

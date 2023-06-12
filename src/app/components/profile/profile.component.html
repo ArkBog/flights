@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<div class="profile-background">
+  <ng-container *ngIf="userLogged === false">
+    <form [formGroup]="logIn" (ngSubmit)="submit()">
+      <input
+        type="text"
+        class="flights-searcher-option"
+        placeholder="Login"
+        formControlName="login"
+      />
+      <input
+        type="password"
+        class="flights-searcher-option"
+        placeholder="password"
+        formControlName="password"
+      />
+      <button type="submit" class="button-full">Log in</button>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="userLogged === true">
+    <div class="user-logged">
+      Logged as {{ userLogin }} <br />
+    </div>
+  </ng-container>
+</div>

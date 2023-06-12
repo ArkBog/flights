@@ -1,29 +1,71 @@
-<!-- <div *ngIf="userIsLoggedStatus">Użytkownik zalogowany</div>
-<div *ngIf="userIsLoggedStatus==false">Użytkownik niezalogowany</div> -->
+
 <app-choose-seat (messageEvent)="reciveData($event)"></app-choose-seat>
+<ng-container *ngIf="numberOfPassangersArray.length===0">
+  <div class="ticket">Everything fine. Go to basket.</div>
+</ng-container>
 <div class="ticket" *ngFor="let div of numberOfPassangersArray">
-    <h1>{{startFlyHeader}} - {{endFlyHeader}}</h1>
-    <h3>Departure: {{departureDate}} |   Return:{{returnDate}} </h3>
-    <form [formGroup]="ticket" (ngSubmit)="onSubmitTicket()">
-        <input type="text" name="name" id="name" placeholder="name" class="flights-searcher-option" formControlName="name">
-        <input type="text" name="surname" id="surname" placeholder="surname" class="flights-searcher-option" formControlName="surname">
-        <input onfocus="type='date'" onblur="type='text'" placeholder="date of birth" class="flights-searcher-option" formControlName="dateOfBirth">
-        <div class="additional-luggage">
-            <div class="additional-luggage-input">
-                <img src="../../../assets/img/suitcase-rolling-solid.svg" alt="additional-luggage" class="additional-luggage-background">
-                <input type="checkbox" name="additionalLuggage" id="additionalLuggage" formControlName="additionalLuggage" >
-             </div>
-             <p class="label">Additional luggage</p>
-        </div>
-        <div>
-            <button type="button" class="button-full" formConrolName="seat" (click)="displayComponentChooseSeat()">Choose your seat</button>
-            {{yourSeat}}
-        </div>
-        <button type="submit" class="button-full">Submit</button>
-    </form>
-    <div class="test"></div>
+  <h1>{{ startFlyHeader }} - {{ endFlyHeader }}</h1>
+  <ng-container *ngIf="flightsForm.returnDate===null">
+    <h3>Departure: {{ departureDate }}</h3>
+  </ng-container>
+  <ng-container *ngIf="flightsForm.returnDate != null">
+  <h3>
+    Departure: {{ departureDate }} | Return:{{ returnDate }}
+  </h3>
+</ng-container>
+  <form [formGroup]="ticket" (ngSubmit)="onSubmitTicket()">
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="name"
+      class="flights-searcher-option"
+      formControlName="name"
+    />
+    <input
+      type="text"
+      name="surname"
+      id="surname"
+      placeholder="surname"
+      class="flights-searcher-option"
+      formControlName="surname"
+    />
+    <input
+      onfocus="type='date'"
+      onblur="type='text'"
+      placeholder="date of birth"
+      class="flights-searcher-option"
+      formControlName="dateOfBirth"
+    />
+    <div class="additional-luggage">
+      <div class="additional-luggage-input">
+        <img
+          src="./assets/img/suitcase-rolling-solid.svg"
+          alt="additional-luggage"
+          class="additional-luggage-background"
+        />
+        <input
+          type="checkbox"
+          #additionalLuggage
+          name="additionalLuggage"
+          id="additionalLuggage"
+          formControlName="additionalLuggage"
+        />
+      </div>
+      <p class="label">Additional luggage + 50</p>
+    </div>
+    <div>
+      <button
+        type="button"
+        class="button-full"
+        formConrolName="seat"
+        (click)="displayComponentChooseSeat()"
+      >
+        Choose your seat
+      </button>
+      {{ yourSeat }}
+    </div>
+    <button type="submit" class="button-full">Submit</button>
+  </form>
+  <div class="test"></div>
 </div>
-
-{{ticket.value | json}}
-
-{{yourSeat}}
