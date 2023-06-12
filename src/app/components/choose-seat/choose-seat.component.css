@@ -1,8 +1,9 @@
 .container {
   width: 100%;
   text-align: center;
-  position: relative;
+  position: absolute;
   display: none;
+  z-index: 2;
 }
 
 .container .close {
@@ -46,4 +47,16 @@
 
 .container .buttons-container .seat:checked {
   opacity: 0.9;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .container .background {
+    width: 100%;
+  }
+  .container .buttons-container {
+    left: 10%;
+  }
 }

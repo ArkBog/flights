@@ -1,8 +1,9 @@
 .container {
   width: 100%;
   text-align: center;
-  position: relative;
+  position: absolute;
   display: none;
+  z-index: 2;
   .close {
     position: absolute;
     top: 2%;
@@ -16,7 +17,6 @@
       color: var(--secondary-color);
     }
   }
-
   .background {
     height: 100%;
     z-index: -1;
@@ -39,6 +39,18 @@
       &:checked {
         opacity: 0.9;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    .background{
+      width: 100%;
+    }
+    .buttons-container{
+      left: 10%;
     }
   }
 }
