@@ -64,13 +64,11 @@ export class FlightDetailsComponent implements OnInit {
 
   ngOnInit(): void {
       this.userIsLoggedInfo.userIsLogged.subscribe(userIsLoggedStatus => this.userIsLoggedStatus = userIsLoggedStatus);
-      console.log(this.userIsLoggedStatus);
+
 
     this.storageForm = localStorage.getItem("flyFrom");
-    console.log(this.storageForm);
+
     this.flightsForm = JSON.parse(this.storageForm);
-    console.log(this.flightsForm);
-    console.log(this.flightsForm.flyFrom);
     this.convertFlyFromToNumber = Number(this.flightsForm.flyFrom);
     
     this.startFly = this.airports[this.convertFlyFromToNumber];
@@ -78,20 +76,20 @@ export class FlightDetailsComponent implements OnInit {
     this.startFlyHeader = this.startFly.from;
 
     this.convertFlyToToNumber = Number(this.flightsForm.flyTo);
+    console.log(this.convertFlyFromToNumber);
     this.endFly = this.startFly.departures[this.convertFlyToToNumber];
     this.endFlyHeader = this.endFly.name;
     
 
     this.departureDate = `${this.flightsForm.departureDate} ${this.endFly.startTime}`;
-    this.returnDate = `${this.flightsForm.returnDate} ${this.airports[this.convertFlyToToNumber].departures[this.convertFlyFromToNumber].startTime}`;
-    console.log(this.returnDate);
+    this.returnDate = `${this.flightsForm.returnDate} ${this.airports[this.convertFlyFromToNumber].departures[this.convertFlyToToNumber].startTime}`;
     this.seats = this.startFly.departures[this.convertFlyToToNumber].seats;
     this.seatsService.seats = this.seats;
 
-    this.price = this.airports[this.convertFlyToToNumber].departures[this.convertFlyFromToNumber].price;
+    this.price = this.airports[this.convertFlyFromToNumber].departures[this.convertFlyToToNumber].price;
 
     this.numberOfPassangersFromLocal = this.flightsForm.numberOfPassangers;
-    console.log(this.numberOfPassangersFromLocal);
+
 
     for(let i = 0; i < this.numberOfPassangersFromLocal; i++){
       this.numberOfPassangersArray.push(i)
@@ -103,7 +101,6 @@ export class FlightDetailsComponent implements OnInit {
 
   reciveData($event: any){
     this.yourSeat = $event;
-    console.log(this.yourSeat);
   }
 
   displayComponentChooseSeat(){
@@ -112,7 +109,6 @@ export class FlightDetailsComponent implements OnInit {
 
   
   onSubmitTicket(){
-    console.log(this.ticket.value);
     if(this.flightsForm.returnDate === null){
       this.twoWayTravel = false
     }
@@ -129,7 +125,6 @@ export class FlightDetailsComponent implements OnInit {
       twoWayTravel: this.twoWayTravel,
     };
     this.basket.push(this.bookedTicket);
-    console.log(this.basket);
     this.basketService.basketFromService = this.basket;
     this.numberOfPassangersArray.shift();
   }

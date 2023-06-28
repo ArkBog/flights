@@ -51,6 +51,7 @@ export class FlightsSearchComponent implements OnInit {
   startTravel(value: any) {
     this.zmienna = value;
     this.departures = airports.default[this.zmienna].departures;
+    console.log(airports.default[this.zmienna].departures)
   }
 
   changeDate(value: any) {
