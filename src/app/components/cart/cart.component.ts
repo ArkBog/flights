@@ -27,11 +27,11 @@ export class CartComponent implements OnInit {
     
     for (let i = 0; i < this.basket.length; i++){
       ticketCost = this.basket[i].price;
-      if(this.basket[i].additionalLuggage === true){
-        ticketCost = this.basket[i].price + 50
-      };
       if(this.basket[i].twoWayTravel === true){
-        ticketCost = this.basket[i].price * 2
+        ticketCost = ticketCost * 2
+      };
+      if(this.basket[i].additionalLuggage === true){
+        ticketCost = ticketCost + 50
       };
       
       this.totalCost.push(ticketCost)
