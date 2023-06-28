@@ -1,3 +1,13 @@
+## General Information
+This is appcation for booking flights tickets.
+
+## Technologies Used
+- Angular,
+- TypeScript,
+- JavaScript,
+- SCSS / CSS,
+- HTML.
+
 # Flights
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.

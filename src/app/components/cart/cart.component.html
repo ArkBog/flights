@@ -9,8 +9,12 @@
     {{ item.name }}
     {{ item.surname }}
     {{ item.seat }}
-    {{ item.price }}
+    <ng-container *ngFor="let item of totalCost"> 
+      {{item}}
+    </ng-container>
+    <!-- {{ item.price }} -->
   </div>
+
   <h1>Total cost: {{ addArrayElements() }}</h1>
   <button class="button-full" [routerLink]="['/payment']">
     Confirm & Pay now

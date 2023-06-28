@@ -24,4 +24,5 @@
   color: var(--third-color);
   font-size: 2rem;
   text-transform: uppercase;
+  padding: 0 0 1rem 0;
 }

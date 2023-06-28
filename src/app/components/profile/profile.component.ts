@@ -42,4 +42,10 @@ export class ProfileComponent implements OnInit{
       }
     }
   }
+
+  logout(){
+    this.authService.userIsLogged = false;
+    this.userLogged = false;
+    console.log("wylogowano");
+  }
 }

@@ -17,19 +17,24 @@ export class CartComponent implements OnInit {
   constructor(private basketService: BasketService){}
 
   ngOnInit(): void {
-    this.totalCost.length = 0;
+    this.totalCost = [];
+    this.basket = [];
     console.log(this.totalCost);
     this.basket = this.basketService.basketFromService;
 
+    let ticketCost:number;
+
     
     for (let i = 0; i < this.basket.length; i++){
+      ticketCost = this.basket[i].price;
       if(this.basket[i].additionalLuggage === true){
-        this.basket[i].price = this.basket[i].price + 50
+        ticketCost = this.basket[i].price + 50
       };
       if(this.basket[i].twoWayTravel === true){
-        this.basket[i].price = this.basket[i].price * 2
-      }
-      this.totalCost.push(this.basket[i].price)
+        ticketCost = this.basket[i].price * 2
+      };
+      
+      this.totalCost.push(ticketCost)
     }
 
     console.log(this.totalCost);
