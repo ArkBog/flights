@@ -88,3 +88,7 @@
 .ticket .additional-luggage .additional-luggage-input input[type="checkbox"]:hover {
   cursor: pointer;
 }
+
+.submited-ticket {
+  background-color: red;
+}

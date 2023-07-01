@@ -5,13 +5,11 @@
   <ng-container *ngIf="basket.length > 0"
     >
   <h1>Your tickets</h1>
-  <div class="basket-item" *ngFor="let item of basket">
+  <div class="basket-item" *ngFor="let item of basket, let i = index">
     {{ item.name }}
     {{ item.surname }}
     {{ item.seat }}
-    <ng-container *ngFor="let item of totalCost"> 
-      {{item}}
-    </ng-container>
+    {{totalCost[i]}}
     <!-- {{ item.price }} -->
   </div>
 

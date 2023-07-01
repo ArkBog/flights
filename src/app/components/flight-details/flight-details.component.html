@@ -3,7 +3,7 @@
 <ng-container *ngIf="numberOfPassangersArray.length===0">
   <div class="ticket">Everything fine. Go to basket.</div>
 </ng-container>
-<div class="ticket" *ngFor="let div of numberOfPassangersArray">
+<div class = "ticket" *ngFor="let div of numberOfPassangersArray, let i = index" [ngStyle]="{'display': i === 0 ? 'block':'none'}">
   <h1>{{ startFlyHeader }} - {{ endFlyHeader }}</h1>
   <ng-container *ngIf="flightsForm.returnDate===null">
     <h3>Departure: {{ departureDate }}</h3>
@@ -13,7 +13,7 @@
     Departure: {{ departureDate }} | Return:{{ returnDate }}
   </h3>
 </ng-container>
-  <form [formGroup]="ticket" (ngSubmit)="onSubmitTicket()">
+  <form [formGroup]="ticket" (ngSubmit)="onSubmitTicket(i)">
     <input
       type="text"
       name="name"
@@ -63,7 +63,7 @@
       >
         Choose your seat
       </button>
-      {{ yourSeat }}
+      {{ yourSeats[i] }}
     </div>
     <button type="submit" class="button-full">Submit</button>
   </form>

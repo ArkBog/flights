@@ -47,6 +47,8 @@ export class FlightDetailsComponent implements OnInit {
 
   yourSeat!:string
 
+  yourSeats:string[] = [];
+
   price!:number;
 
   twoWayTravel!:boolean;
@@ -101,6 +103,7 @@ export class FlightDetailsComponent implements OnInit {
 
   reciveData($event: any){
     this.yourSeat = $event;
+    this.yourSeats.push(this.yourSeat);
   }
 
   displayComponentChooseSeat(){
@@ -108,7 +111,7 @@ export class FlightDetailsComponent implements OnInit {
   }
 
   
-  onSubmitTicket(){
+  onSubmitTicket(param:any){
     if(this.flightsForm.returnDate === null){
       this.twoWayTravel = false
     }
@@ -126,6 +129,8 @@ export class FlightDetailsComponent implements OnInit {
     };
     this.basket.push(this.bookedTicket);
     this.basketService.basketFromService = this.basket;
-    this.numberOfPassangersArray.shift();
+    this.yourSeats.splice(param, 1);
+    this.numberOfPassangersArray.splice(param, 1);
+    console.log(this.numberOfPassangersArray.length);
   }
 }

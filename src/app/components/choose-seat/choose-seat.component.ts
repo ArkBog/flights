@@ -3,6 +3,7 @@ import { SeatsService } from 'src/app/services/seats.service';
 
 interface Seat {
   seatsNumber?: string;
+  seatsAvialbility?: boolean;
 }
 
 @Component({
@@ -23,6 +24,8 @@ export class ChooseSeatComponent implements OnInit {
 
   yourSeat!: string;
 
+  yourSeats:string[]=[];
+
   choosenSeatsArray: string[] = []; 
   choosenSeatsArrayToJson:any;
   
@@ -39,6 +42,7 @@ export class ChooseSeatComponent implements OnInit {
     }
 
     this.seatsService.currentStatus.subscribe(status => this.status = status);
+    console.log(this.allSeats);
   }
 
   choosenSeat(param:any){
@@ -54,8 +58,19 @@ export class ChooseSeatComponent implements OnInit {
     this.choosenSeatsArrayToJson = JSON.stringify(this.choosenSeatsArray);
     // localStorage.setItem("seats", this.choosenSeatsArrayToJson);
     alert(this.yourSeat);
+    this.yourSeats.push(this.yourSeat);
     this.messageEvent.emit(this.yourSeat);
     this.seatsService.changeStatus("none");
 
+  }
+
+  checkAvialbility(){
+    for(let i = 0; i < this.allSeats.length; i++){
+      for(let j = 0; j < this.yourSeats.length; j++){
+        if(this.allSeats[i].seatsNumber === this.yourSeats[j]){
+          this.allSeats[i].seatsAvialbility = true;
+        }
+      }
+    }
   }
 }
