@@ -36,6 +36,7 @@
       placeholder="date of birth"
       class="flights-searcher-option"
       formControlName="dateOfBirth"
+      [max]="maxDate"
     />
     <div class="additional-luggage">
       <div class="additional-luggage-input">
@@ -50,6 +51,8 @@
           name="additionalLuggage"
           id="additionalLuggage"
           formControlName="additionalLuggage"
+          (change)="extraLuggageStatus(additionalLuggage.checked)"
+          [checked]="extraLuggage"
         />
       </div>
       <p class="label">Additional luggage + 50</p>
