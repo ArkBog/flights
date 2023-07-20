@@ -1,7 +1,20 @@
-<div class="container" [style.display]="status" >
+<div class="first-container">
+  <div class="container" [style.display]="status">
     <div class="close" (click)="closeComponent()">X</div>
-    <img src="./assets/img/airbusa320s.webp" alt="" class="background">
+    
     <div class="buttons-container">
-        <input type="radio" name="seat" #seat *ngFor="let button of allSeats" class="seat" [value]="button.seatsNumber" (change)="choosenSeat(seat.value)" [disabled]="button.seatsAvialbility" (focus)="checkAvialbility()">
+      <input
+        type="radio"
+        name="seat"
+        #seat
+        *ngFor="let button of allSeats"
+        class="seat"
+        [value]="button.seatsNumber"
+        (change)="choosenSeat(seat.value)"
+        [disabled]="button.seatsAvialbility"
+        (focus)="checkAvialbility()"
+      />
     </div>
+    <img src="./assets/img/airbusa320s.webp" alt="" class="background" />
+  </div>
 </div>
