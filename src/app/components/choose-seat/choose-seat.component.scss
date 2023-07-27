@@ -52,13 +52,25 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
+  .first-container {
     width: 100%;
-    .background {
+    .container {
       width: 100%;
-    }
-    .buttons-container {
-      left: 10%;
+      .background {
+        width: 100%;
+        object-fit: cover;
+      }
+      .buttons-container {
+        width: 90%;
+        grid-template-columns: 10vw 10vw 19vw 10vw 10vw 10vw;
+        grid-template-rows: repeat(12, 9vw);
+        column-gap: 2vw;
+        row-gap: 7.2vw;
+        .seat {
+          width: 9vw;
+          height: 9vw;
+        }
+      }
     }
   }
 }

@@ -2,16 +2,19 @@
     {
     "from": "Cracow",
     "id": 0, 
-    "departures": [{"id": 0, "name": "Roma", "country": "Italia", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72},{"id": 1,"name": "Milan", "country": "Italia", "price": 200, "startTime": "08:00:00+01:00", "landingTime": "11:00:00+01:00", "seats": 72}]
+    "placeCountry": "Poland",
+    "departures": [{"id": 0, "name": "Roma", "country": "Italy", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72},{"id": 1,"name": "Milan", "country": "Italy", "price": 200, "startTime": "08:00:00+01:00", "landingTime": "11:00:00+01:00", "seats": 72}]
     },
     {
     "from": "Roma",
     "id": 1, 
+    "placeCountry":"Italy",
     "departures": [{"id": 0, "name": "Cracow", "country": "Poland", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72}]
     },
     {
     "from": "Milan",
     "id": 2, 
+    "placeCountry":"Italy",
     "departures": [{"id": 0, "name": "Cracow", "country": "Poland", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72}]
     }
 ]

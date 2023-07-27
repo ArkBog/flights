@@ -1,1 +1,17 @@
-<p>flights works!</p>
+<div class="container">
+    <div class="filters-container">
+        <button class="button-full" *ngFor="let item of filters" (click)="chooseFilter(item, $event)">{{item}}</button>
+    </div>
+</div>
+<div class="container">
+    <div class="card" *ngFor="let item of filteredElements">
+        <h1 class="card-title">{{item.from}}</h1>
+        <img class="card-photo" src="../../../assets/img/milan.png">
+        <div class="card-text">eeee</div>
+    </div>
+    <!-- <div class="card">
+        <h1 class="card-title">Milan</h1>
+        <img class="card-photo" src="../../../assets/img/milan.png">
+        <div class="card-text">eeee</div>
+    </div> -->
+</div>
