@@ -3,18 +3,24 @@
     "from": "Cracow",
     "id": 0, 
     "placeCountry": "Poland",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor arcu, convallis bibendum tempor et, aliquam sed sem. Donec et viverra dolor. Vivamus interdum pharetra massa at imperdiet. Donec feugiat porttitor turpis, eget varius urna tincidunt vel. Maecenas vitae porta velit. Fusce euismod ipsum nunc, ut euismod massa rhoncus tincidunt. Aenean lorem velit, viverra sed commodo sit amet, ultrices nec nibh. Sed id ex ex. In hac habitasse platea dictumst. Donec sed felis tortor. Curabitur a erat a mauris ultrices viverra. Donec est augue, tristique vel efficitur maximus, sollicitudin at enim. Phasellus nec dolor facilisis, mattis nibh at, vestibulum sapien. Mauris rutrum sagittis quam, vitae commodo elit bibendum et. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "photo": "../../../assets/img/cracow.png",
     "departures": [{"id": 0, "name": "Roma", "country": "Italy", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72},{"id": 1,"name": "Milan", "country": "Italy", "price": 200, "startTime": "08:00:00+01:00", "landingTime": "11:00:00+01:00", "seats": 72}]
     },
     {
     "from": "Roma",
     "id": 1, 
     "placeCountry":"Italy",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor arcu, convallis bibendum tempor et, aliquam sed sem. Donec et viverra dolor. Vivamus interdum pharetra massa at imperdiet. Donec feugiat porttitor turpis, eget varius urna tincidunt vel. Maecenas vitae porta velit. Fusce euismod ipsum nunc, ut euismod massa rhoncus tincidunt. Aenean lorem velit, viverra sed commodo sit amet, ultrices nec nibh. Sed id ex ex. In hac habitasse platea dictumst. Donec sed felis tortor. Curabitur a erat a mauris ultrices viverra. Donec est augue, tristique vel efficitur maximus, sollicitudin at enim. Phasellus nec dolor facilisis, mattis nibh at, vestibulum sapien. Mauris rutrum sagittis quam, vitae commodo elit bibendum et. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "photo": "../../../assets/img/roma.png",
     "departures": [{"id": 0, "name": "Cracow", "country": "Poland", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72}]
     },
     {
     "from": "Milan",
     "id": 2, 
     "placeCountry":"Italy",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dolor arcu, convallis bibendum tempor et, aliquam sed sem. Donec et viverra dolor. Vivamus interdum pharetra massa at imperdiet. Donec feugiat porttitor turpis, eget varius urna tincidunt vel. Maecenas vitae porta velit. Fusce euismod ipsum nunc, ut euismod massa rhoncus tincidunt. Aenean lorem velit, viverra sed commodo sit amet, ultrices nec nibh. Sed id ex ex. In hac habitasse platea dictumst. Donec sed felis tortor. Curabitur a erat a mauris ultrices viverra. Donec est augue, tristique vel efficitur maximus, sollicitudin at enim. Phasellus nec dolor facilisis, mattis nibh at, vestibulum sapien. Mauris rutrum sagittis quam, vitae commodo elit bibendum et. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+    "photo": "../../../assets/img/milan.png",
     "departures": [{"id": 0, "name": "Cracow", "country": "Poland", "price": 200, "startTime": "07:00:00+01:00", "landingTime": "10:00:00+01:00", "seats": 72}]
     }
 ]

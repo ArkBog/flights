@@ -24,6 +24,10 @@ export class CartComponent implements OnInit {
 
     let ticketCost: number;
 
+    if(this.basket.length >= 5){
+      this.basket[4].price = this.basket[4].price * .5;
+    }
+
     for (let i = 0; i < this.basket.length; i++) {
       // let birthdate = new Date(this.basket[i].dateOfBirth)
       let timeDiff = Math.abs(
