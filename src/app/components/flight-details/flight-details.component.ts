@@ -63,10 +63,18 @@ export class FlightDetailsComponent implements OnInit {
 
   extraLuggage: boolean = false;
 
+  pattern: string = '[A-Za-z]';
+
   ticket = new FormGroup({
-    name: new FormControl(),
-    surname: new FormControl(),
-    dateOfBirth: new FormControl(),
+    name: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[a-zA-Z -]*$'),
+    ]),
+    surname: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[a-zA-Z -]*$'),
+    ]),
+    dateOfBirth: new FormControl('', [Validators.required]),
     additionalLuggage: new FormControl(),
     seat: new FormControl(),
   });
@@ -126,24 +134,30 @@ export class FlightDetailsComponent implements OnInit {
     this.seatsService.changeStatus('block');
   }
 
+  getControl(controlName: string): FormControl {
+    return this.ticket.get(controlName) as FormControl;
+  }
+
   onSubmitTicket(param: any) {
-    if (this.flightsForm.returnDate === null) {
-      this.twoWayTravel = false;
-    } else this.twoWayTravel = true;
-    this.bookedTicket = {
-      name: this.ticket.value.name,
-      surname: this.ticket.value.surname,
-      dateOfBirth: this.ticket.value.dateOfBirth,
-      additionalLuggage: this.ticket.value.additionalLuggage,
-      seat: this.yourSeat,
-      price: this.price,
-      twoWayTravel: this.twoWayTravel,
-    };
-    this.basket.push(this.bookedTicket);
-    this.basketService.basketFromService = this.basket;
-    this.yourSeats.splice(param, 1);
-    this.numberOfPassangersArray.splice(param, 1);
-    console.log(this.numberOfPassangersArray.length);
+    if (this.ticket.valid) {
+      if (this.flightsForm.returnDate === null) {
+        this.twoWayTravel = false;
+      } else this.twoWayTravel = true;
+      this.bookedTicket = {
+        name: this.ticket.value.name,
+        surname: this.ticket.value.surname,
+        dateOfBirth: this.ticket.value.dateOfBirth,
+        additionalLuggage: this.ticket.value.additionalLuggage,
+        seat: this.yourSeat,
+        price: this.price,
+        twoWayTravel: this.twoWayTravel,
+      };
+      this.basket.push(this.bookedTicket);
+      this.basketService.basketFromService = this.basket;
+      this.yourSeats.splice(param, 1);
+      this.numberOfPassangersArray.splice(param, 1);
+      console.log(this.numberOfPassangersArray.length);
+    }
   }
   extraLuggageStatus(param: any) {
     this.extraLuggage = param;

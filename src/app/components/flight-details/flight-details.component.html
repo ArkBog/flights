@@ -14,6 +14,12 @@
   </h3>
 </ng-container>
   <form [formGroup]="ticket" (ngSubmit)="onSubmitTicket(i)">
+    <div *ngIf="ticket.get('name')?.hasError('required') && ticket.get('name')?.untouched">
+      This field is required.
+    </div>
+    <div *ngIf="ticket.get('name')?.hasError('pattern') && ticket.get('name')?.touched">
+      This field accept only letters.
+    </div>
     <input
       type="text"
       name="name"
@@ -22,6 +28,12 @@
       class="flights-searcher-option"
       formControlName="name"
     />
+    <div *ngIf="ticket.get('surname')?.hasError('required') && ticket.get('surname')?.untouched">
+      This field is required.
+    </div>
+    <div *ngIf="ticket.get('surname')?.hasError('pattern') && ticket.get('surname')?.touched">
+      This field accept only letters.
+    </div>
     <input
       type="text"
       name="surname"
@@ -30,6 +42,10 @@
       class="flights-searcher-option"
       formControlName="surname"
     />
+
+    <div *ngIf="ticket.get('dateOfBirth')?.hasError('required') && ticket.get('dateOfBirth')?.untouched">
+      This field is required.
+    </div>
     <input
       onfocus="type='date'"
       onblur="type='text'"
@@ -38,6 +54,7 @@
       formControlName="dateOfBirth"
       [max]="maxDate"
     />
+
     <div class="additional-luggage">
       <div class="additional-luggage-input">
         <img
@@ -72,4 +89,3 @@
   </form>
   <div class="test"></div>
 </div>
-{{flightsForm | json}}
