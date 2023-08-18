@@ -75,6 +75,7 @@
       <p class="label">Additional luggage + 50</p>
     </div>
     <div>
+      <div *ngIf="yourSeat == null">This field is required.</div>
       <button
         type="button"
         class="button-full"

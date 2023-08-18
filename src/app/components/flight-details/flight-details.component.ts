@@ -139,7 +139,7 @@ export class FlightDetailsComponent implements OnInit {
   }
 
   onSubmitTicket(param: any) {
-    if (this.ticket.valid) {
+    if (this.ticket.valid && this.yourSeat != null) {
       if (this.flightsForm.returnDate === null) {
         this.twoWayTravel = false;
       } else this.twoWayTravel = true;
